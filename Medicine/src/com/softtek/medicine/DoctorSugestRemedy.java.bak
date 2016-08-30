@@ -1,0 +1,26 @@
+package com.softtek.medicine;
+
+import java.util.Properties;
+
+import javax.mail.Session;
+
+  
+ public class DoctorSugestRemedy { 
+  
+	 public static void main(String[] args) {
+			
+		    System.out.println("Doctor sugest medication Start");
+			
+		    String smtpHostServer = "smtp-gw1.homeoffice.wal-mart.com";
+		    String emailID = "ariane.dutra@softtek.com";
+		    
+		    Properties props = System.getProperties();
+
+		    props.put("mail.smtp.host", smtpHostServer);
+
+		    Session session = Session.getInstance(props, null);
+		    
+		    EmailUtil.sendEmail(session, emailID,"SimpleEmail Testing Subject", "SimpleEmail Testing Body");
+		}
+  
+ } 
